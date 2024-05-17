@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        
+        <title>Capybara</title>
+    </head>
+    <body>
+        
+        <div id="start">
+            <div class="navbar">
+                <div class="user">
+                    <img src="images/image (2).jpg" alt="User Image">
+                </div>
+            </div>
+            <div class="container">
+                <div class="info">
+                    <h1>Discover</h1>
+                    <p>Let's see the beauty of the mythical animal which the legend says is<br> blessed to be the cutest by heaven called "Capibara" Together</p>
+                        
+                    
+                </div>
+            </div>
+            <div class="slider">
+                <img src="images/left-arrow.png" alt="Left Arrow" id="prev">
+                <div class="preview">
+                    <img src="images/image (1).jpg" class="thumbnail" id="img1">
+                    <img src="images/image (2).jpg" class="thumbnail" id="img2">
+                    <img src="images/image (3).jpg" class="thumbnail" id="img3">
+                    <img src="images/image (4).jpg" class="thumbnail" id="img4">
+                    <img src="images/image (5).jpg" class="thumbnail" id="img5">
+                </div>
+                <img src="images/right-arrow.png" alt="Right Arrow" id="next">
+            </div>
+
+        </div>
+    <script>
+        var prev=document.getElementById("prev")
+        var next=document.getElementById("next")
+        var thumbnail=document.getElementsByClassName("thumbnail")
+        var start=document.getElementById("start")
+        var backgroundimg=new Array(
+            "images/image (1).jpg",
+            "images/image (2).jpg",
+            "images/image (3).jpg",
+            "images/image (4).jpg",
+            "images/image (5).jpg"
+        )
+        let i=0;
+        thumbnail[0].classList.add("active")
+        img1.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=0;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+            thumbnail[i].classList.add("active")
+
+        }
+        img2.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=1;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+
+            thumbnail[i].classList.add("active")
+
+        }
+        img3.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=2;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+            thumbnail[i].classList.add("active")
+
+        }
+        img4.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=3;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+            thumbnail[i].classList.add("active")
+
+        }
+        img5.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=4;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+            thumbnail[i].classList.add("active")
+
+        }
+
+        next.onclick=function(){
+
+            if(i==5){i=0;}
+            let temp=i+1
+            if(temp==5){
+                start.style.backgroundImage='url("'+backgroundimg[0]+'")';
+                thumbnail[0].classList.add("active");
+            }
+            else{
+                start.style.backgroundImage='url("'+backgroundimg[temp]+'")';
+                thumbnail[temp].classList.add("active");
+
+            }
+            thumbnail[i].classList.remove("active");
+
+            i++;
+            
+        }
+        prev.onclick=function(){
+
+            if(i==-1){i=4;}
+            if(i==5){i=0;}
+            let temp=i-1
+            if(temp==-1){
+                start.style.backgroundImage='url("'+backgroundimg[4]+'")';
+                thumbnail[4].classList.add("active");
+
+            }
+            else{
+                start.style.backgroundImage='url("'+backgroundimg[temp]+'")';
+              thumbnail[temp].classList.add("active");
+            }
+            thumbnail[i].classList.remove("active");
+            i--;
+            
+        }
+    </script>
+
+    </body>
+</html>
